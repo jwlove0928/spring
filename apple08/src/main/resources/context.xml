@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="car" class="com.itbank.mvc08.SuperCar">
+	<constructor-arg ref="window2"></constructor-arg>
+	<constructor-arg value="빨강"></constructor-arg>
+	<constructor-arg value="300"></constructor-arg>
+	<constructor-arg ref="door2"></constructor-arg>
+</bean>
+
+<bean id="car2" class="com.itbank.mvc08.SportCar">
+	<property name="window" ref="window"></property>
+	<property name="color" value="파랑"></property>
+	<property name="speed" value="200"></property>
+	<property name="door" ref="door"></property>
+</bean>
+
+
+<bean id="window" class="com.itbank.mvc08.AutoWindow"></bean> <!-- car2용 -->
+<bean id="door" class="com.itbank.mvc08.SkyDoor"></bean> <!-- car2용 -->
+
+<bean id="window2" class="com.itbank.mvc08.StrongWindow"></bean>
+<bean id="door2" class="com.itbank.mvc08.GeneralDoor"></bean>
+
+
+</beans>
